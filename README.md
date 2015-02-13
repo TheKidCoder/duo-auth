@@ -35,6 +35,7 @@ To create a signed request to be passed to the DUO servers use the follow single
 ```
 
 The sign request method takes 4 arguments:
+
 1. Your DUO Integration Key.
 2. Your DUO Secret Key.
 3. An application secret token. Any secret token with a minimum of 40 characters will do, but if you're using rails, the default secret token will work great.
@@ -47,6 +48,7 @@ To verify the returned DUO response after 2-factor has been verified use the fol
   Duo::Auth.verify_response(ENV[:duo_ikey], ENV[:duo_skey], Rails::Application.config.secret_token, params[:sig_response])
 ```
 The verify response method takes 4 arguments:
+
 1. Your DUO Integration Key.
 2. Your DUO Secret Key.
 3. An application secret token..
