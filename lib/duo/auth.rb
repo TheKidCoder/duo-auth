@@ -1,3 +1,5 @@
+require 'base64'
+require 'openssl'
 require "duo/auth/version"
 
 module Duo
