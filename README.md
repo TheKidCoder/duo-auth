@@ -2,7 +2,7 @@
 
 # DUO Auth 
 
-This gem provides the ability to create HMAC login verification requests with the DUO 2-factor server.
+This gem provides the ability to create & verify login requests & responses with the DUO 2-factor server.
 The code is taken from https://github.com/duosecurity/duo_ruby with some minor refactorings and gemification.
 
 ## Compatibilty
@@ -29,7 +29,7 @@ Or install it yourself as:
 
 ### Create a Signed Request
 
-To create a signed request to be passed to the DUO servers use the follow singleton method:
+To create a signed request to be passed to the DUO servers, use the follow class method:
 ```ruby
   Duo::Auth.sign_request(ENV[:duo_ikey], ENV[:duo_skey], Rails::Application.config.secret_token, @user.id)
 ```
@@ -43,7 +43,7 @@ The sign request method takes 4 arguments:
 
 ### Verify a DUO Response
 
-To verify the returned DUO response after 2-factor has been verified use the following singleton:
+To verify the returned DUO response after 2-factor has been complete, use the following:
 ```ruby
   Duo::Auth.verify_response(ENV[:duo_ikey], ENV[:duo_skey], Rails::Application.config.secret_token, params[:sig_response])
 ```
@@ -51,7 +51,7 @@ The verify response method takes 4 arguments:
 
 1. Your DUO Integration Key.
 2. Your DUO Secret Key.
-3. An application secret token..
+3. An application secret token.
 4. The response from DUO. This is typically posted back to your application after authentication is complete.
 
 The `verify_response` method will return the user identifier that was passed to the `sign_request` method if the verification was successful.
