@@ -1,4 +1,6 @@
-# DUO Auth ![](http://www.landmarkventures.com/wp-content/uploads/2013/04/duo.png)
+![](http://techjeeper.com/wp-content/uploads/2013/08/Wordmark-Duo.png)
+
+# DUO Auth 
 
 This gem provides the ability to create HMAC login verification requests with the DUO 2-factor server.
 The code is taken from https://github.com/duosecurity/duo_ruby with some minor refactorings and gemification.
