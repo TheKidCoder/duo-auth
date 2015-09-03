@@ -5,7 +5,7 @@
 This gem provides the ability to create & verify login requests & responses with the DUO 2-factor server.
 The code is taken from https://github.com/duosecurity/duo_ruby with some minor refactorings and gemification.
 
-## Compatibilty
+## Compatibility
 This gem is up-to-date with `bb77567c838d77bce4f501b475d28dade300edcd` from https://github.com/duosecurity/duo_ruby.
 This covers `DUO-PSA-2015-001`.
 
